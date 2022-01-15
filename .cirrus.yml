@@ -24,7 +24,7 @@ task:
        - git config --global user.name "mrff666"
        - git config --global user.email "okay11112@gmail.com"
        - mkdir -p /tmp/ccache
-       - rclone copy cirrus:arcana/ccache.tar.gz /tmp -P
+       - rclone copy cirrus:nusantara/ccache.tar.gz /tmp -P
        - cd /tmp
        - time tar xf ccache.tar.gz
        - cd /tmp
@@ -43,7 +43,7 @@ task:
       - repo init -q --no-repo-verify --depth=1 -u https://github.com/NusantaraProject-ROM/android_manifest -b 11 -g default,-device,-mips,-darwin,-notdefault
       - repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j8
       # DT/VT/KT/TC
-      - git clone --depth=1 https://github.com/isnrdra/Device_xiaomi_J -pb device/xiaomi/juice
+      - git clone --depth=1 https://github.com/ferry666/device_xiaomi_lime/tree/NAD -b NAD device/xiaomi/juice
       - git clone --depth=1 https://github.com/indraadp/prebuilt_vendor_juice --single-branch -b A11 vendor/xiaomi/juice
       - git clone --depth=1 https://github.com/MiBengal-Development/android_kernel_xiaomi_bengal --single-branch -b 11.0 kernel/xiaomi/juice
       # HALS
@@ -75,7 +75,7 @@ task:
       - ./ziping.sh
       - cd /tmp
       - curl -s https://api.telegram.org/$tokentl/sendMessage -d chat_id=$idtl -d text="Uploading ccache...."
-      - rclone copy ccache.tar.gz cirrus:arcana -P
+      - rclone copy ccache.tar.gz cirrus:nusantara -P
       - echo " "
       - echo "============================"
       - echo "Build Uploaded Successfully!"
