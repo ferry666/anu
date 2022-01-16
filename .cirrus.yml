@@ -65,6 +65,7 @@ task:
       - ./ziping.sh
       - cd /tmp
       - rclone copy ccache.tar.gz cirrus:nusantara -P
+ 
       - echo " "
       - echo "============================"
       - echo "Build Uploaded Successfully!"
